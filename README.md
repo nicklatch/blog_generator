@@ -1,3 +1,3 @@
 # A simple Haskell EDSL 
 
-Mainly curiosity project to expolore haskell
+Mainly a curiosity project to expolore haskell

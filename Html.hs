@@ -21,7 +21,7 @@ html_ title content =
   Html
     ( element_
         "html"
-        ( element_ "head" (element_ "title" title)
+        ( element_ "head" (element_ "title" (escape title))
             <> element_ "body" (getStructureString content)
         )
     )

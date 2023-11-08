@@ -10,11 +10,15 @@ module Html
   )
 where
 
+-- * Types
+
 newtype Html = Html String
 
 newtype Structure = Structure String
 
 type Title = String
+
+-- * EDSL
 
 html_ :: Title -> Structure -> Html
 html_ title content =

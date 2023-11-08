@@ -30,6 +30,18 @@ p_ :: String -> Structure
 p_ =
   Structure . element_ "p" . escape
 
+code_ :: String -> Structure
+code_ =
+  Structure . element_ "pre" . escape
+
+ul_ :: [Structure] -> Structure
+ul_ =
+  Structure . element_ "ul" . concatMap (element_ "li" . getStructureString)
+
+ol_ :: [Structure] -> Structure
+ol_ =
+  Structure . element_ "ol" . concatMap (element_ "li" . getStructureString)
+
 append_ :: Structure -> Structure -> Structure
 append_ (Structure a) (Structure b) =
   Structure

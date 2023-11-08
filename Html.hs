@@ -38,6 +38,18 @@ element_ :: String -> String -> String
 element_ tag content =
   "<" <> tag <> ">" <> content <> "</" <> tag <> ">"
 
+escape :: String -> String
+escape =
+  let escapeChar c =
+        case c of
+          '<' -> "&lt;"
+          '>' -> "&gt;"
+          '&' -> "&amp;"
+          '"' -> "&quot;"
+          '\'' -> "&#39"
+          _ -> [c]
+   in concatMap escapeChar
+
 append_ :: Structure -> Structure -> Structure
 append_ (Structure a) (Structure b) =
   Structure

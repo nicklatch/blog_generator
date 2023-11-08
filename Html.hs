@@ -28,11 +28,11 @@ html_ title content =
 
 h1_ :: String -> Structure
 h1_ =
-  Structure . element_ "h1"
+  Structure . element_ "h1" . escape
 
 p_ :: String -> Structure
 p_ =
-  Structure . element_ "p"
+  Structure . element_ "p" . escape
 
 element_ :: String -> String -> String
 element_ tag content =
